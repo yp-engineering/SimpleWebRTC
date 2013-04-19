@@ -387,6 +387,10 @@ WebRTC.prototype.createRoom = function (name, cb) {
     }
 };
 
+WebRTC.prototype.listRooms = function (cb) {
+  this.connection.emit('list', cb)
+}
+
 WebRTC.prototype.joinRoom = function (name) {
     this.connection.emit('join', name);
 };
